@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title></title>
+<style> 
+  body{margin:0;}
+div
+{
+  width:100px;
+  background:lavender;
+  transition:all 1s;
+  -webkit-transition:all 1s; /* Safari */
+  position:absolute;
+  right:0;
+  bottom:0;
+  height:0;
+}
+button {
+  position:absolute;
+    top:0;
+    right:0;
+    border:none;
+    font-size:12px;
+    background:#aaa;
+  
+  }
+
+</style>
+</head>
+<body>
+
+<div id="test">
+  <p>this is a test</p> 
+  <button id="btn">x</button>
+  </div>
+
+<script>
+  window.onload = function() {
+  var box = document.getElementById("test");
+    box.style.height= 100 + "px";
+    
+  var closebtn = document.getElementById("btn");
+    closebtn.onclick = function() {
+    box.parentNode.removeChild(box);
+    }
+  }
+
+</script>
+</body>
+</html>

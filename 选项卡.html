@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			margin: 0;
+		}
+		a {
+			text-decoration: none;
+			color: black;
+		}
+		.outbox {
+			width: 280px;
+			height: 400px;
+			overflow: hidden;
+		}
+		.innerbox {
+			width: 1500px;
+			height: 280px;
+			-webkit-transition: all 1s;
+			-o-transition: all 1s;
+			transition: all 1s;
+		}
+		.innerbox img {
+			width: 280px;
+			float: left;
+		}
+		.links {
+			padding-top: 10px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="outbox">
+		<div id="innerdiv" class="innerbox">
+			<img src="pic1.png" alt="">
+			<img src="pic2.png" alt="">
+			<img src="pic3.png" alt="">
+			<img src="pic4.png" alt="">
+		</div>
+		<div id="linksdiv" class="links">
+			<a href="#1">图片1</a>
+			<a href="#2">图片2</a>
+			<a href="#3">图片3</a>
+			<a href="#4">图片4</a>
+		</div>
+	</div>
+	<script>
+		var x = document.getElementById("innerdiv");
+		var y = document.getElementById("linksdiv");
+		var z = y.getElementsByTagName("a");
+		for (var i = 0; i < z.length ; i++) {
+			z[i].onclick = function() {
+				var index = Number(this.href.replace(/.*#/g,""));
+				x.style.marginLeft = (1-index)*280 + "px";
+				return false;
+			}
+		}
+	</script>
+</body>
+</html>
